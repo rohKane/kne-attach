@@ -37,7 +37,7 @@ function attachCarToHelicopter(playerPed, helicopter)
 end
 
 
-RegisterCommand("detachcar", function(source, args)
+RegisterNetEvent("detachcar", function(source, args)
     if DoesEntityExist(attachedCar) then
         DetachEntity(attachedCar, true, true)
         attachedCar = nil
@@ -92,7 +92,7 @@ function attachNearestCarToHelicopter(playerPed, helicopter)
 end
 
 -- Command to attach the nearest car to the helicopter
-RegisterCommand("attachncar", function(source, args)
+RegisterNetEvent("attachncar", function(source, args)
     local playerPed = GetPlayerPed(-1)
     local vehicle = GetVehiclePedIsIn(playerPed, false)
 
@@ -120,7 +120,16 @@ RegisterCommand("attachncar", function(source, args)
         TriggerEvent("chat:addMessage", {
             color = {255, 0, 0},
             multiline = true,
-            args = {"System", "You must be in a helicopter to use this command!"}
+            args = {"System", "You must be in a helicopter to use this item!"}
         })
+    end
+end)
+
+
+RegisterNetEvent("attachncaritem", function()
+    if DoesEntityExist(attachedCar) then
+        TriggerEvent("detachcar")
+    else
+        TriggerEvent("attachncar")
     end
 end)
