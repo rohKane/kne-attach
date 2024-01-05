@@ -1,7 +1,7 @@
 
 # kne-attach
 
-A simple script to attach nearest vehicle to your Helicopter skids Standalone version.
+A simple script to attach nearest vehicle to your Helicopter skids QBCore
 
 
 
