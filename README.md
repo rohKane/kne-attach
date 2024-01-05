@@ -7,8 +7,9 @@ A simple script to attach nearest vehicle to your Helicopter skids Standalone ve
 
 
 ## Usage
- - /attachncar to attach nearest car
- - /detachcar to detach the car
+ - Item name is helihook
+
+
 ## Requirement
 - QBCore
 - QBcore ProgressBar
